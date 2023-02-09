@@ -1,0 +1,47 @@
+@function rem($size) {
+  @return $size/16+rem
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin position($pos, $top:auto, $left:auto) {
+  position: $pos;
+  top: $top;
+  left: $left;
+}
+
+@mixin flex_set($display:flex, $flex_der:row, $main_axis:flex-start, $secondary_axis:stretch) {
+  display: $display;
+  flex-direction: $flex_der;
+  justify-content: $main_axis;
+  align-items: $secondary_axis;
+}
+
+//******** respond-to
+
+$mobile: 768px;
+$tablet: 1024px;
+
+@mixin respond-to($size) {
+  @if $size == mobile {
+    @media screen and (max-width: $mobile - 1) {
+      @content
+    }
+  }
+  @if $size == tablet {
+    @media screen and (min-width: $mobile) and (max-width: $tablet - 1) {
+      @content
+    }
+  }
+  @if $size == desktop {
+    @media screen and (min-width: $tablet) {
+      @content
+    }
+  }
+}

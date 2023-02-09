@@ -1,0 +1,130 @@
+@import "../variables";
+@import "../mixin";
+
+.main_screen {
+
+  display: flex;
+  position: relative;
+  background-color: $background_color;
+  color: $color_text_white;
+}
+
+@include respond-to(mobile) {
+  .main_screen {
+    @include flex_set(flex, column, center, center);
+  }
+}
+
+//**************
+
+.main_screen_left {
+  width: 55%;
+  @include flex_set(flex, null, center, center);
+  padding: 225px 0 165px 0;
+}
+
+@include respond-to(tablet) {
+  .main_screen_left {
+    width: 45%;
+    padding: 260px 20px 260px 50px;
+  }
+}
+
+@include respond-to(mobile) {
+  .main_screen_left {
+    width: 100%;
+    padding: 140px 0 30px 0;
+  }
+}
+
+//**************
+
+.main_screen_right {
+  width: 45%;
+  background-color: $background_color_right_side;
+  @include flex_set(flex, null, null, center);
+  padding-left: 70px;
+  //noinspection CssUnknownTarget
+  background-image: url("../img/main_screen_bg_right2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@include respond-to(tablet) {
+  .main_screen_right {
+    width: 55%;
+    padding-left: 35px;
+  }
+}
+
+@include respond-to(mobile) {
+  .main_screen_right {
+    width: 100%;
+    @include flex_set(flex, null, center);
+    padding: 20px 15px 50px 15px;
+  }
+}
+
+//**************
+
+.main_screen_left_logo {
+  @include position(absolute, 35px, 120px);
+}
+
+@include respond-to(tablet) {
+  .main_screen_left_logo {
+    left: 50px;
+  }
+}
+
+@include respond-to(mobile) {
+  .main_screen_left_logo {
+    @include position(null, 25px, 15px);
+  }
+}
+
+//**************
+
+.calendar_img {
+  width: 50%;
+}
+
+@include respond-to(tablet) {
+  .calendar_img {
+    width: 100%;
+  }
+}
+
+@include respond-to(mobile) {
+  .calendar_img {
+    width: 70%;
+  }
+}
+
+//**************
+
+.main_screen_right_heading {
+  font-size: rem(48);
+  margin-bottom: 15px;
+}
+
+@include respond-to(tablet) {
+  .main_screen_right_heading {
+    font-size: rem(38);
+  }
+}
+
+@include respond-to(mobile) {
+  .main_screen_right_heading {
+    font-size: rem(38);
+  }
+}
+
+.main_screen_right_text {
+  width: 85%;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+
+

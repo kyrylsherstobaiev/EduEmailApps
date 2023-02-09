@@ -1,0 +1,18 @@
+@import "../variables";
+
+.backOnTopButton {
+  position: fixed;
+  right: 15px;
+  bottom: -100px;
+  width: 70px;
+  height: 70px;
+  background-color: #148286;
+  opacity: 0.7;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s linear;
+  &.active {
+    bottom: 50px;
+  }
+}

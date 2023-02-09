@@ -1,0 +1,94 @@
+@import "../variables";
+@import "../mixin";
+
+
+.signup_form_inner {
+  @include flex_set(flex, null, center, center);
+  background: $background_color;
+  padding: 90px 0;
+}
+
+.form {
+  background: $color_text_white;
+  padding: 60px 230px;
+  //position: relative;
+}
+
+//.error_message {
+//  display: none;
+//  justify-content: center;
+//  align-items: center;
+//  width: 80%;
+//  height: 20%;
+//  background: $color_error_label;
+//  position: absolute;
+//  top: 71%;
+//  left: 10%;
+//}
+
+
+@include respond-to(mobile) {
+
+  .signup_form_inner {
+    padding: 90px 0;
+  }
+  .form {
+    padding: 60px 20px;
+  }
+}
+
+//noinspection SpellCheckingInspection
+.inner_fieldform {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_heading {
+  color: $background_color;
+  font-size: rem(40);
+  margin-bottom: 10px;
+}
+
+.form_heading, .form_text {
+  text-align: center;
+}
+
+.form_text {
+  margin-bottom: 40px;
+  color: $color_font_form;
+  font-weight: 700;
+}
+
+.form_name::placeholder, .form_email::placeholder  {
+  color: $color_font_form;
+}
+
+.form_name, .form_email {
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid $color_form_input;
+  padding: 4px;
+
+  &:hover {
+    border-bottom-color: $color_form_input_active;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom-color: $color_active_label;
+  }
+
+  &:not(:focus):not(:placeholder-shown):valid {
+    border-bottom-color: $color_form_input_active;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    border-bottom-color: $color_error_label;
+  }
+
+  //&:not(:focus):not(:placeholder-shown):invalid ~ .error_message {
+  //  display: flex;
+  //}
+}
+
+

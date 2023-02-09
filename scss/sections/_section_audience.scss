@@ -1,0 +1,111 @@
+@import "../mixin";
+@import "../variables";
+
+.audience_inner {
+  padding: 120px 220px 90px;
+}
+
+@include respond-to(tablet) {
+  .audience_inner {
+    padding: 70px 50px;
+  }
+}
+
+@include respond-to(mobile) {
+  .audience_inner {
+    padding: 70px 15px;
+  }
+}
+
+.audience_heading {
+  margin-bottom: 50px;
+}
+
+@include respond-to(mobile) {
+  .audience_heading {
+    margin-bottom: 30px;
+  }
+}
+
+.aud_heading_text {
+  text-align: center;
+}
+
+.audience_type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $color_border_section_audience;
+  padding-bottom: 70px;
+  margin-bottom: 70px;
+}
+
+@include respond-to(mobile) {
+  .audience_type {
+    @include flex_set(flex, column-reverse, center, center);
+  }
+}
+
+.audience_picture, .audience_info {
+  width: 50%;
+}
+
+.audience_picture {
+  @include flex_set(flex, null, center, center);
+}
+
+.audience_img {
+  width: 100%;
+}
+
+@include respond-to(mobile) {
+  .audience_picture, .audience_info {
+    width: 100%;
+  }
+  .audience_img {
+    width: 75%;
+  }
+}
+
+.audience_info {
+  margin-left: 110px;
+}
+
+@include respond-to(tablet) {
+  .audience_info {
+    margin-left: 35px;
+  }
+}
+
+@include respond-to(mobile) {
+  .audience_info {
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.audience_item {
+  padding-left: 25px;
+  position: relative;
+
+  &::before {
+    content: '';
+    @include position(absolute, 6px, 0);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color_main_text;
+  }
+}
+
+.audience_item + .audience_item {
+  margin-top: 12px;
+}
+
+.audience_text {
+  line-height: 1.5;
+}
+
+.audience_text + .audience_text {
+  margin-top: 50px;
+}

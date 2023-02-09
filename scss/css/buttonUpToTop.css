@@ -1,0 +1,17 @@
+.backOnTopButton {
+  position: fixed;
+  right: 15px;
+  bottom: -100px;
+  width: 70px;
+  height: 70px;
+  background-color: #5c6b63;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.backOnTopButton.active {
+  bottom: 50px;
+}
+
+/*# sourceMappingURL=buttonUpToTop.css.map */

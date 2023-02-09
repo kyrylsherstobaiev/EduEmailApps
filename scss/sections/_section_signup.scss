@@ -1,0 +1,14 @@
+@import "../variables";
+@import "../mixin";
+
+
+.signup {
+  color: $color_text_white;
+  background: $background_color;
+  padding: 70px 0;
+  @include flex_set(flex, column, center, center)
+}
+
+.signup_up_text, .singup_marg_button {
+  margin-bottom: 30px;
+}

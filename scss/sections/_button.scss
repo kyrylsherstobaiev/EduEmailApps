@@ -1,0 +1,31 @@
+@import "../variables";
+@import "../mixin";
+
+$button_color_enable: #FFC83D;
+$button_color_hover: #FFB700;
+$button_color_active: #E8AC15;
+
+
+.signup_button {
+  padding: 5px 85px;
+  border-radius: 30px;
+  border: none;
+  background: $button_color_enable;
+  color: $color_text_white;
+  font-size: rem(30);
+  font-weight: 700;
+  white-space: nowrap;
+  &:hover {
+    background: $button_color_hover;
+  }
+  &:active {
+    background: $button_color_active;
+  }
+}
+
+@include respond-to(mobile) {
+  .signup_button {
+    display: block;
+    margin: 0 auto;
+  }
+}
